@@ -9,10 +9,8 @@
     </nav>
 
     <div id="content" class="flex flex-wrap">
-      <div id="phone" class="w-1/2 h-full relative height-phone">
-        <img src="@/assets/iphone-transparent.png" alt="" class="height-phone width-phone absolute left-1/2 transform -translate-x-1/2 z-10">
-        <div id="phone-screen" style="height: 632px !important; width: 290px !important;" class="rounded-3xl absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 z-0 bg-red-800">Hello</div>
-      </div>
+      <Phone id="phone" class="w-1/2 h-full relative height-phone">
+      </Phone>
       <div id="question" class="w-1/2">
         Question
       </div>
@@ -24,10 +22,12 @@
 <script>
 import Logo from '@/components/Logo.vue'
 import { mapGetters } from 'vuex'
+import Phone from '@/components/Phone.vue'
 
 export default {
   name: 'Home',
   components: {
+    Phone,
     Logo
   },
   computed: {
