@@ -39,6 +39,10 @@ export default {
   color: #2c3e50;
 }
 
+.bg-primary-red {
+  background-color: rgb(184, 55, 61);
+}
+
 #nav {
   padding: 30px;
 
@@ -100,5 +104,15 @@ export default {
     opacity: 0;
     transform: translateY(35px);
     background: transparent;
+}
+ /* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 </style>

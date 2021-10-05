@@ -5,6 +5,7 @@ import store from './store'
 import titleMixin from './mixins/titleMixin'
 
 import 'tailwindcss/tailwind.css'
+import 'boxicons'
 
 Vue.mixin(titleMixin)
 Vue.config.productionTip = false

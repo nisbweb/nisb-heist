@@ -1,5 +1,5 @@
 <template>
-  <div id="Home" class="min-h-screen pt-20">
+  <div id="Home" class="min-h-screen pt-20 2xl:pt-32">
     <nav class="flex items-center justify-between fixed top-0 left-0 w-full py-2">
       <Logo :animate="false" class="transform scale-50 -translate-x-16"/>
       <div id="profile" class="flex flex-row items-center justify-center px-10">
@@ -12,8 +12,14 @@
       <Phone id="phone" class="w-1/2 h-full relative height-phone">
       </Phone>
       <div id="question" class="w-1/2">
-        Question
+        <Question />
       </div>
+    </div>
+    <div v-if="galleryItem" id="popup" class="fixed top-0 left-0 w-full h-screen p-32 flex items-center justify-center z-50 bg-gray-800 bg-opacity-50 cursor-pointer" @click="closePopup">
+      <img v-if="galleryItem.type === 'image'" :src="galleryItem.item" alt="" @click.stop class="h-full object-center object-contain">
+      <video v-if="galleryItem.type === 'video'" class="h-full object-center object-contain" @click.stop controls>
+        <source :src="galleryItem.item" type="video/mp4">
+      </video>
     </div>
 
   </div>
@@ -23,16 +29,24 @@
 import Logo from '@/components/Logo.vue'
 import { mapGetters } from 'vuex'
 import Phone from '@/components/Phone.vue'
+import Question from '@/components/Question.vue'
 
 export default {
   name: 'Home',
   components: {
     Phone,
-    Logo
+    Logo,
+    Question
+  },
+  methods: {
+    closePopup () {
+      this.$store.commit('SET_GALLERY_ITEM', null)
+    }
   },
   computed: {
     ...mapGetters({
-      user: 'GET_USER'
+      user: 'GET_USER',
+      galleryItem: 'GET_GALLERY_ITEM'
     })
   }
 }

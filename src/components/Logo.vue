@@ -1,7 +1,7 @@
 <template>
   <div id="Logo" class="cursor-pointer" :class="{'logo-animate': animate}">
     <h1 class="text-6xl flex items-center w-max text-gray-800">LA CASA
-      <span class="px-3 py-2 mx-1 text-4xl bg-red-700 text-white">DE</span>
+      <span class="px-3 py-2 mx-1 text-4xl bg-primary-red text-white">DE</span>
        TESORO</h1>
   </div>
 </template>
