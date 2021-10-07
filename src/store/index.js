@@ -2,8 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import phone from './phone'
 import questions from '../questions.json'
-import { doc, updateDoc } from 'firebase/firestore'
+import { doc, updateDoc, increment } from 'firebase/firestore'
 import db from '../firebase'
+import router from '@/router/index'
 
 Vue.use(Vuex)
 
@@ -38,6 +39,9 @@ export default new Vuex.Store({
     },
     INCREMENT_PROGRESS: state => {
       state.progress += 1
+    },
+    INCREMENT_WRONG_ATTEMPT: state => {
+      state.user.wrongAttempts += 1
     }
   },
   actions: {
@@ -88,6 +92,31 @@ export default new Vuex.Store({
         questions[state.progress].events.length - 1
       ) {
         commit('INCREMENT_EVENT')
+      }
+    },
+    WRONG_ATTEMPT: ({ commit, state }) => {
+      commit('INCREMENT_WRONG_ATTEMPT')
+      updateDoc(doc(db, 'users', state.user.id), {
+        wrongAttempts: increment(1)
+      })
+        .then(data => {})
+        .catch(err => {
+          console.error(err)
+        })
+      if (state.user.wrongAttempts >= 3) {
+        // eliminate user
+        updateDoc(doc(db, 'users', state.user.id), {
+          eliminated: true
+        })
+          .then(data => {
+            Vue.$toast.error('Shreesh bloked you!')
+            router.push({ name: 'Result' })
+          })
+          .catch(err => {
+            console.error(err)
+          })
+      } else {
+        Vue.$toast.error(`${3 - state.user.wrongAttempts} attempts left!`)
       }
     }
   },

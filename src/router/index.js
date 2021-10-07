@@ -78,12 +78,15 @@ router.beforeEach(async (to, from, next) => {
       store.commit('SET_USER', results[1].data())
 
       if (results[1].data().admin === true) next()
-      else if (!results[0].data().started) {
+      else if (results[1].data().eliminated === true) {
+        if (to.name === 'Result') next()
+        else next('Result')
+      } else if (!results[0].data().started) {
         if (to.name === 'Lobby') next()
         else next('Lobby')
       } else if (results[1].data().completed !== true) {
         if (to.name === 'Home') next()
-        else next('Home')
+        else next({ name: 'Home' })
       } else {
         if (to.name === 'Result') next()
         else next('Result')

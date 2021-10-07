@@ -48,6 +48,7 @@
   },
   {
     "question": "This is also a question and there is an answer to this also so you better think again!",
+    "elimination": true,
     "events": [
       {
         "type": "gallery",

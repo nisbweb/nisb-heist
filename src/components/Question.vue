@@ -40,8 +40,14 @@ export default {
     submitAnswer () {
       // answer submission logic
 
+      this.$toast('Sending information to shreesh')
+      // if answer wrong
+      if (this.questions[this.progress].elimination === true) {
+        this.$store.dispatch('WRONG_ATTEMPT')
+      } else {
       // increment progress
-      this.$store.dispatch('NEXT_QUESTION')
+        this.$store.dispatch('NEXT_QUESTION')
+      }
     }
   },
   computed: {
