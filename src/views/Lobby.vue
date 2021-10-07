@@ -1,9 +1,9 @@
 <template>
   <div id="Lobby" class="min-h-screen flex items-center justify-center">
-    <div class="wrapper">
+    <div class="wrapper flex justify-center flex-col items-center">
       <Logo />
-      <div class="content animate">
-        Welcome
+      <div class="content animate mt-3">
+        Welcome <span class="font-bold">{{user.code}}</span>, Please wait the event will start soon!
       </div>
     </div>
   </div>
@@ -11,6 +11,9 @@
 
 <script>
 import Logo from '@/components/Logo.vue'
+import { mapGetters } from 'vuex'
+import db from '../firebase.js'
+import { doc, onSnapshot } from 'firebase/firestore'
 export default {
   name: '',
   title: 'Lobby',
@@ -21,6 +24,18 @@ export default {
     return {
 
     }
+  },
+  mounted () {
+    onSnapshot(doc(db, 'admin', 'admin'), (doc) => {
+      if (doc.data().started === true) {
+        this.$router.push({ name: 'Home' })
+      }
+    })
+  },
+  computed: {
+    ...mapGetters({
+      user: 'GET_USER'
+    })
   }
 }
 </script>

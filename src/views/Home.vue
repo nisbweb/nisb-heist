@@ -11,7 +11,7 @@
     <div id="content" class="flex flex-wrap">
       <Phone id="phone" class="w-1/2 h-full relative height-phone">
       </Phone>
-      <div id="question" class="w-1/2">
+      <div id="question" class="w-5/12">
         <Question />
       </div>
     </div>

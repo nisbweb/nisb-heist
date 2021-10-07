@@ -31,11 +31,17 @@ export default {
     }
   },
   mounted () {
+    if (this.questions[this.progress].events && this.questions[this.progress].events[this.currentEvent].type === 'news') {
+      this.$store.dispatch('NEXT_EVENT')
+    }
   },
   computed: {
     ...mapGetters({
       route: 'GET_ROUTE',
-      posts: 'GET_POSTS'
+      posts: 'GET_POSTS',
+      progress: 'GET_PROGRESS',
+      currentEvent: 'GET_CURRENT_EVENT',
+      questions: 'GET_QUESTIONS'
     })
   },
   methods: {

@@ -35,11 +35,17 @@ export default {
     }
   },
   mounted () {
+    if (this.questions[this.progress].events && this.questions[this.progress].events[this.currentEvent].type === 'gallery') {
+      this.$store.dispatch('NEXT_EVENT')
+    }
   },
   computed: {
     ...mapGetters({
       route: 'GET_ROUTE',
-      gallery: 'GET_GALLERY'
+      gallery: 'GET_GALLERY',
+      progress: 'GET_PROGRESS',
+      currentEvent: 'GET_CURRENT_EVENT',
+      questions: 'GET_QUESTIONS'
     })
   },
   methods: {

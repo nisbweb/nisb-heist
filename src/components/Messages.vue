@@ -53,11 +53,17 @@ export default {
     }
   },
   mounted () {
+    if (this.questions[this.progress].events && this.questions[this.progress].events[this.currentEvent].type === 'message') {
+      this.$store.dispatch('NEXT_EVENT')
+    }
   },
   computed: {
     ...mapGetters({
       route: 'GET_ROUTE',
-      messages: 'GET_MESSAGES'
+      messages: 'GET_MESSAGES',
+      progress: 'GET_PROGRESS',
+      currentEvent: 'GET_CURRENT_EVENT',
+      questions: 'GET_QUESTIONS'
     })
   },
   methods: {

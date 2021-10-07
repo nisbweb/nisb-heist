@@ -26,6 +26,14 @@ const routes = [
     }
   },
   {
+    path: '/result',
+    name: 'Result',
+    component: () => import('../views/Result.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/sign-in',
     name: 'Sign-In',
     component: () => import('../views/SignIn.vue')
@@ -53,6 +61,7 @@ var getCurrentUser = () => {
 }
 
 router.beforeEach(async (to, from, next) => {
+  console.log(to.name, from.name)
   store.commit('SET_LOADING', true)
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   const user = await getCurrentUser()
@@ -60,10 +69,25 @@ router.beforeEach(async (to, from, next) => {
     if (!user) {
       next('Sign-In')
     } else {
-      const userRef = doc(db, 'users', user.uid)
-      const userDoc = await getDoc(userRef)
-      store.commit('SET_USER', userDoc.data())
-      next()
+      const promises = [
+        getDoc(doc(db, 'admin', 'admin')),
+        getDoc(doc(db, 'users', user.uid))
+      ]
+      // const userDoc = await getDoc(userRef)
+      const results = await Promise.all(promises)
+      store.commit('SET_USER', results[1].data())
+
+      if (results[1].data().admin === true) next()
+      else if (!results[0].data().started) {
+        if (to.name === 'Lobby') next()
+        else next('Lobby')
+      } else if (results[1].data().completed !== true) {
+        if (to.name === 'Home') next()
+        else next('Home')
+      } else {
+        if (to.name === 'Result') next()
+        else next('Result')
+      }
     }
   } else {
     next()

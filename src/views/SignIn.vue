@@ -15,7 +15,7 @@
 <script>
 import Logo from '@/components/Logo.vue'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import { doc, setDoc } from 'firebase/firestore'
+import { doc, setDoc, getDoc } from 'firebase/firestore'
 import db from '../firebase'
 export default {
   name: '',
@@ -44,17 +44,21 @@ export default {
 
           // get random city
           fetch(`http://geodb-free-service.wirefreethought.com/v1/geo/cities?hateoasMode=off&offset=${this.random(0, 23687)}`).then(response => response.json()).then((response) => {
-            console.log(response)
-            setDoc(doc(db, 'users', user.uid), {
-              id: user.uid,
-              code: response.data[0].name,
-              name: user.displayName,
-              email: user.email,
-              progress: 0,
-              completed: false,
-              completedTime: null
-            }).then(data => {
-              this.$router.push({ name: 'Home' })
+            getDoc(doc(db, 'users', user.uid)).then((docSnap) => {
+              if (!docSnap.exists()) {
+                setDoc(doc(db, 'users', user.uid), {
+                  id: user.uid,
+                  code: response.data[0].name,
+                  name: user.displayName,
+                  email: user.email,
+                  progress: 0,
+                  completed: false,
+                  completedTime: null
+                }).then(data => {
+                }).catch(err => {
+                  console.error(err)
+                })
+              } else this.$router.push({ name: 'Home' })
             }).catch(err => {
               console.error(err)
             })
@@ -62,7 +66,7 @@ export default {
             console.error(err)
           })
         }).catch((error) => {
-          console.log(error)
+          console.error(error)
           // const errorCode = error.code
           // const errorMessage = error.message
           // const email = error.email

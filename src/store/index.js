@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import phone from './phone'
+import questions from '../questions.json'
+import { doc, updateDoc } from 'firebase/firestore'
+import db from '../firebase'
 
 Vue.use(Vuex)
 
@@ -8,7 +11,13 @@ export default new Vuex.Store({
   state: {
     loading: false,
     user: null,
-    galleryItem: null
+    galleryItem: null,
+
+    progress: null,
+    currentEvent: null,
+
+    // questions
+    questions
   },
   mutations: {
     SET_LOADING: (state, value) => {
@@ -16,16 +25,79 @@ export default new Vuex.Store({
     },
     SET_USER: (state, user) => {
       state.user = user
+      state.progress = user.progress
     },
     SET_GALLERY_ITEM: (state, galleryItem) => {
       state.galleryItem = galleryItem
+    },
+    SET_CURRENT_EVENT: (state, currentEvent) => {
+      state.currentEvent = currentEvent
+    },
+    INCREMENT_EVENT: state => {
+      state.currentEvent += 1
+    },
+    INCREMENT_PROGRESS: state => {
+      state.progress += 1
     }
   },
-  actions: {},
+  actions: {
+    NEXT_QUESTION: ({ commit, dispatch, state }) => {
+      if (state.progress + 1 < state.questions.length) {
+        commit('INCREMENT_PROGRESS')
+        updateDoc(doc(db, 'users', state.user.id), {
+          progress: state.progress
+        })
+          .then(data => {})
+          .catch(err => {
+            console.error(err)
+          })
+        if (state.questions[state.progress].events) {
+          dispatch('LOAD_EVENT', {
+            event: state.questions[state.progress].events[0],
+            options: { silent: false, setCurrentEvent: true, currentEvent: 0 }
+          })
+        } else {
+          commit('SET_CURRENT_EVENT', null)
+        }
+      } else {
+        // complete quiz
+        updateDoc(doc(db, 'users', state.user.id), {
+          completed: true,
+          completedTime: new Date()
+        })
+          .then(data => {
+            // this.$router.push({ name: '' })
+            console.log(data)
+          })
+          .catch(err => {
+            console.error(err)
+          })
+      }
+    },
+    NEXT_EVENT: ({ commit, dispatch, state }) => {
+      if (state.currentEvent < questions[state.progress].events.length - 1) {
+        commit('INCREMENT_EVENT')
+        dispatch('LOAD_EVENT', {
+          event: questions[state.progress].events[state.currentEvent],
+          options: {
+            silent: false
+          }
+        })
+      } else if (
+        state.currentEvent ===
+        questions[state.progress].events.length - 1
+      ) {
+        commit('INCREMENT_EVENT')
+      }
+    }
+  },
   getters: {
     GET_LOADING: state => state.loading,
     GET_USER: state => state.user,
-    GET_GALLERY_ITEM: state => state.galleryItem
+    GET_GALLERY_ITEM: state => state.galleryItem,
+    GET_QUESTIONS: state => state.questions,
+    GET_PROGRESS: state => state.progress,
+    GET_CURRENT_EVENT: state => state.currentEvent
   },
   modules: {
     phone
