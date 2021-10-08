@@ -39,7 +39,7 @@
     ]
   },
   {
-    "question": " Our system being powered by the Brute OS can virtually attempt and achieve the impossible. Privacy is now a myth. Did you say Mr. Varun B and root? I have successfully intercepted his message log and this matches your search results. x^2 = 151.249043772225 y^2 = 5881.7211500644 Waiting for input results in decimals. ___________ ____________",
+    "question": " Our system being powered by the Brute OS can virtually attempt and achieve the impossible. Privacy is now a myth. Did you say Mr. Varun B and root? I have successfully intercepted his message log and this matches your search results. x^2 = 151.249043772225 y^2 = 5881.7211500644 Waiting for input results in decimals. ___________,____________",
     "last": true,
     "elimination": false,
     "events": [
@@ -198,7 +198,7 @@
   },
   {
     "question": "Seems like the tables have turned now! It's hard to answer the question 'What is wrong?' when nothing is right! Did you say Mr. Varun B and Mr. Shreesh K though?  Scanning through last message, Shreesh : Varun, let’s meet at x and y x+y=88.924694  y-x=64.35578      X = ?  Y = ? Where do you think they meet? ______(5)",
-    "afterevent": true,
+    "last": true,
     "elimination": false,
     "events": [
       {
@@ -407,4 +407,3 @@
     ]
   }
 ]
-

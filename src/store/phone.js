@@ -6,11 +6,71 @@ export default {
   state: {
     route: 'home',
     messages: [
-      // {
-      //   name: 'Madhu',
-      //   content: 'Hello guys',
-      //   read: false
-      // }
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      },
+      {
+        name: 'Madhu',
+        content: 'Hello guys',
+        read: false
+      }
     ],
     posts: [
       // {
