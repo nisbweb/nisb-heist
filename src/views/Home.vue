@@ -5,6 +5,7 @@
       <div id="profile" class="flex flex-row items-center justify-center px-10">
         <span class="font-semi-bold text-xl mr-4">{{user.code}}</span>
         <img src="@/assets/icons8-money-heist-dali.svg" alt="" class="">
+        <button class="ml-2" @click="signOut">Sign out</button>
       </div>
     </nav>
 
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import { getAuth, signOut } from 'firebase/auth'
 import Logo from '@/components/Logo.vue'
 import { mapGetters } from 'vuex'
 import Phone from '@/components/Phone.vue'
@@ -39,6 +41,15 @@ export default {
     Question
   },
   methods: {
+    signOut () {
+      const auth = getAuth()
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        this.$router.push({ name: 'Sign-In' })
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
     closePopup () {
       this.$store.commit('SET_GALLERY_ITEM', null)
     }

@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import cities from '../cities.json'
 import Logo from '@/components/Logo.vue'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { doc, setDoc, getDoc } from 'firebase/firestore'
@@ -43,26 +44,24 @@ export default {
           const user = result.user
 
           // get random city
-          fetch(`http://geodb-free-service.wirefreethought.com/v1/geo/cities?hateoasMode=off&offset=${this.random(0, 23687)}`).then(response => response.json()).then((response) => {
-            getDoc(doc(db, 'users', user.uid)).then((docSnap) => {
-              if (!docSnap.exists()) {
-                setDoc(doc(db, 'users', user.uid), {
-                  id: user.uid,
-                  code: response.data[0].name,
-                  name: user.displayName,
-                  email: user.email,
-                  progress: 0,
-                  completed: false,
-                  completedTime: null
-                }).then(data => {
-                  this.$router.push({ name: 'Home' })
-                }).catch(err => {
-                  console.error(err)
-                })
-              } else this.$router.push({ name: 'Home' })
-            }).catch(err => {
-              console.error(err)
-            })
+          const city = cities[Math.floor(Math.random() * cities.length)]
+          getDoc(doc(db, 'users', user.uid)).then((docSnap) => {
+            console.log(docSnap.exists())
+            if (!docSnap.exists()) {
+              setDoc(doc(db, 'users', user.uid), {
+                id: user.uid,
+                code: city,
+                name: user.displayName,
+                email: user.email,
+                progress: 0,
+                completed: false,
+                completedTime: null
+              }).then(data => {
+                this.$router.push({ name: 'Home' })
+              }).catch(err => {
+                console.error(err)
+              })
+            } else this.$router.push({ name: 'Home' })
           }).catch(err => {
             console.error(err)
           })
