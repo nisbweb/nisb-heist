@@ -49,6 +49,9 @@ export default new Vuex.Store({
   },
   actions: {
     LOAD_QUESTIONS: ({ commit, dispatch, state }) => {
+      if (router.currentRoute.name !== 'Home') {
+        return
+      }
       setTimeout(() => {
         for (let i = 0; i <= state.progress; i++) {
           if (i === state.progress) {

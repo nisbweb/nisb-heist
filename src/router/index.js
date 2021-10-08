@@ -26,6 +26,14 @@ const routes = [
     }
   },
   {
+    path: '/congratulations',
+    name: 'Congratulations',
+    component: () => import('../views/Congratulations.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/result',
     name: 'Result',
     component: () => import('../views/Result.vue'),
@@ -94,8 +102,9 @@ router.beforeEach(async (to, from, next) => {
         if (to.name === 'Home') next()
         else next({ name: 'Home' })
       } else {
+        if (to.name === 'Congratulations') next()
         if (to.name === 'Result') next()
-        else next('Result')
+        else next('Congratulations')
       }
     }
   } else {

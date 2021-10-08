@@ -2,8 +2,14 @@
   <div id="Lobby" class="min-h-screen flex items-center justify-center">
     <div class="wrapper flex justify-center flex-col items-center">
       <Logo />
-      <div class="content animate mt-3">
+      <div class="content text-lg animate mt-3">
         Welcome <span class="font-bold">{{user.code}}</span>, Please wait the event will start soon!
+      </div>
+      <div class="content animate w-1/2 text-center mt-8">
+        <span class="font-bold">DISCLAIMER: </span><br> The event is programmed analogous to an online game.
+The storyline of the game is completely fictional and does not hold any resemblance to reality.
+Any of the charecters appearing in the story hold no relevance to their circumstances in the game.
+Thank you.
       </div>
     </div>
   </div>
