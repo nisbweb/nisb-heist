@@ -1,395 +1,410 @@
 [
-    {
-      "question": "Hello! This is your personalized AI assistant.  Rule of life is the survival of the fittest and the elimination of the weakest. The weakest is usually well hidden but enjoys the best position in the circle. Who do you see enjoying the best role right now?",
-      "elimination": false,
-      "afterevent":false,
-      "events": [
-        {
-          "type": "gallery",
-          "items": [
-            {
-              "name": "Professor's Video",
-              "type": "video",
-              "src": "video"
-            }
-          ]
-        },
-        {
-          "type": "message",
-          "messages": [
-            {
-              "name": "Professor",
-              "content": "Creo que el tesorero está disfrutando más."
-            }
-          ]
-        },
-        {
-          "type": "news",
-          "posts": [
-            {
-              "title": "Success of sinB",
-              "description": "The Story of sinB (Society of Intellectuals and Noble Benefits), the biggest investing company worth more than 300 billion dollars, reveals the story from rags to riches. CEO Mr. Shreesh K along with colleague and close friend Treasurer Mr. Varun B started the company in an underground cellar which now has more than 2000 offices all around the globe.  "
-            },{
-              "title": "Brute OS, the new generation life-saver:",
-              "description": "Brute OS, the new generation operating system that offers best performance and security is now being used in all computers. Kinar S, the genius behind this, assured the world of its anti-hacking features, platform cross abilities and futuristic AI applications while flipping off a portrait of Bill Gates and Steve Jobs who rejected his job application and ideas."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "question": " Our system being powered by the Brute OS can virtually attempt and achieve the impossible. Privacy is now a myth. Did you say Mr. Varun B and root? I have successfully intercepted his message log and this matches your search results. x^2 = 151.249043772225 y^2 = 5881.7211500644 Waiting for input results in decimals. ___________ ____________",
-      "last":true,
-      "elimination":false,
-      "events": [
-        {
-          "type": "news",
-          "posts": [
-            {
-              "title": "My 5 mantras of his success: Treasurer of sinB reveals",
-              "description": "Varun B, the treasurer of sinB reveals his 5 tips for success - * Perfect knowledge of numbers.*Absolute trust among the colleagues. * Eight hours of sleep.* Zero alcohol, no party during  the weekdays.* Enjoy the success of your efforts"
-            }
-          ]
-        },
-        {
-          "type": "message",
-          "messages": [
-            {
-              "name": "Professor",
-              "content": "Ah! Varun B, What route do we take now?"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "question": "Location for x,y? ____________(12)",
-      "last":false,
-      "elimination": false,
-      "events": [
+  {
+    "question": "Hello! This is your personalized AI assistant.  Rule of life is the survival of the fittest and the elimination of the weakest. The weakest is usually well hidden but enjoys the best position in the circle. Who do you see enjoying the best role right now?",
+    "elimination": false,
+    "afterevent": false,
+    "events": [
+      {
+        "type": "gallery",
+        "items": [
           {
-              "type": "message",
-              "messages": [
-                  {
-                      "name": "Professor",
-                      "content": "These look like some coordinates. If only we had a map."
-                    }
-                ]
-            },
-        
-        {
-            "type": "news",
-            "posts": [
-              {
-                "title": "Will Shih Tzu become the National Dog of India?",
-                "description": "The short fluffy hairy dog has captured the hearts of all, specially of two hardworking CS engineers Miss Vaishnavi R. and Miss Bhumika S. Their tweet about the Shih Tzu has stirred a great deal of activity on Twitter."
-              }
-            ]
-        }
-    ]
-    },
-    {
-      "question": " One does not realise that we have our eyes on everybody. I have managed to access the sinB CCTV hard drive, However the recordings folder denies entry.  Here’s the hint for the 4 digit security pin code: HEX BAD",
-      "last":true,
-      "elimination": false,
-      "events": [
-        {
-          "type": "message",
-          "messages": [
-            {
-              "name": "Professor",
-              "content": "Great! I’ll send my men there"
-            }
-          ]
-        },
-        {
-          "type": "news",
-          "posts": [
-            {
-              "title": "Breaking! Varun B Missing",
-              "description": "Treasurer of sinB, Varun B has been reported missing. According to the complaint lodged by his Partner and close Friend Mr. Shreesh K., Varun has missed the day’s important meetings and has not answered to any of his calls. sinB team is worried about his sudden disappearance."
-            }
-          ]
-        },
-          {
-            "type": "message",
-          "messages": [
-            {
-              "name": "Professor",
-              "content": "We have managed to capture Varun. He refuses to reveal any information.To make him cooperate we need solid evidence against him"
-            }
-          ]
-        },
-        {
-            "type": "news",
-            "posts": [
-              {
-                "title": "Education Minister’s reality check:",
-                "description": "Education a barrier for stopping children from finding their real dreams and unleashing their potential states Education Minister of India Miss. Arpitha P. Grades can never tell a person how talented an individual really is, she claimed. Her statements received major praise throughout the world."
-              }
-            ]   
-        }
-      ]
-    },
-    {
-      "question": "Searching for “IMPOSTERAMONGUS” Match found in folder : sinB account Details : Account number hint : The number of ways of arranging the word without repeating the letters ______(12)",
-      "last":true,
-      "elimination": false,
-      "events": [
-        {
-          "type": "gallery",
-          "items": [
-            {
-              "name": "CCTV Video",
-              "type": "video",
-              "src": "cctv"
-            }
-          ]
-        },
-        {
-            "type": "news",
-            "posts": [
-              {
-                "title": "Bijoy diagnostics mobilises around 8 billion USD from Pedality",
-                "description": "Pedality Investments, one of the leading finance organizations headed by the young business tycoon  Mr.Pradyoth P has recently signed a deal with Bijoy diagnostics and has reportedly managed to have a turnover of over 7.98 billion USD. The chairperson of the management board Mr.Madhusudan J has confirmed good relations with foreign investors."
-              }, {
-                "title":"Insane writer sent to asylum:",
-                "description":"Crazy writer Adeep K.K. has been sent to an asylum after claiming the Geeta to be satanic. His review essay received massive negative responses and the reason behind his “outburst” was perhaps his recent firing from Adobe. Adeep claims to start a music band after he gets out of the nuthouse"
-            }
-            ]
-        },
-        {
-            "type": "message",
-          "messages": [
-            {
-              "name": "Professor",
-              "content": " The video has rattled him. After my men have threatened him for a great deal of time all he is saying is “Imposter among us”."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "question": "According to crackstation.net this hashcode is hashed in MD5 algorithm. For more details visit the website. Enter the Password ________",
-      "last":true,
-      "elimination": false,
-      "events": [
-        {
-            "type": "news",
-            "posts": [
-              {
-                "title": "Actress’s actions warmed our hearts!",
-                "description": "Five major blockbusters haven't pumped the ego of actress Khushi S. who selflessly gave her Starbucks Coffee  and Meal to a hungry couple in the countryside where the actress was taking a break after her shooting."
-              }
-            ]
-        },
-          {
-            "type": "message",
-            "messages": [
-              {
-                "name": "Professor",
-                "content": "Great Job! My hackers have extracted the hashed password of this bank account from the sinB database. The hashcode is: 565b410b44e179a14d3b82f7821508db "
-              }
-            ]
+            "name": "Professor's Video",
+            "type": "video",
+            "src": "prof"
           }
         ]
       },
       {
-        "question": "Seems like the tables have turned now! It's hard to answer the question 'What is wrong?' when nothing is right! Did you say Mr. Varun B and Mr. Shreesh K though?  Scanning through last message, Shreesh : Varun, let’s meet at x and y x+y=88.924694  y-x=64.35578      X = ?  Y = ? Where do you think they meet? ______(5)",
-        "afterevent":true,
-        "elimination": false,
-        "events": [
+        "type": "message",
+        "messages": [
           {
-            "type": "message",
-            "messages": [
-                {
-                    "name": "Professor",
-                    "content": "You are a very valuable member of my team now! Thanks for your help. You’ll get what you deserve!"
-                  }
-              ]
-          },
-      
-      {
-          "type": "news",
-          "posts": [
-            {
-              "title": "Big Breaking! sinB reduced to dust:",
-              "description": "Society of intellectuals and noble benefits - sinB which had seen enormous growth in the past few months has been reportedly looted and the organization is now bankrupt. Allegedly a team of investors and members headed by a mastermind behind a dali mask have devastated the sinB treasury. Details are unknown."
-            }, {
-              "title": "MTech student scores!",
-              "description": "MTech student of IITB Bharath J. has been awarded a full scholarship to pursue a PhD at the prestigious Stanford University. He celebrated by building free websites for needy companies."
-            }
-          ]
-    },
-        {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": "Jitendra ",
-                        "content": "How dare you?!"
-                      },{
-                    "name": "Madhusudan",
-                    "content": "How can you betray us?!"
-                  },{
-                    "name": "Arpitha ",
-                    "content": "OMG! Is this why we gave you the membership?"
-                  },{
-                    "name": "Ashish",
-                    "content": "We helped you so much! Is this how you repay us?!"
-                  },{
-                    "name": "Jagruth",
-                    "content": "I thought you were my friend!"
-                  },{
-                    "name": "Shreenidhi K",
-                    "content": "Ever since Varun was reported missing, all of us are upset and especially Shreesh!"
-                  }
-                  ]
-              }
-      ]
-      },
-      {
-        "question": "Did you say Shreesh and phone?  Checking recent activity.. Image found in gallery. Extracting data from gallery: Poster suggesting link. Sorry, the AI is not human. Type YES once you manage to open the website. ___ ",
-        "last":true,
-        "events": [
-            {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": "Shreesh",
-                        "content": "Why are you bothering me now? I am the CS guy and I will get to know if you track my location. I am busy now! Don't you dare track my phone again!"
-                      }
-                  ]
-              },
-              {
-                "type": "gallery",
-                "items": [
-                  {
-                    "name": "Poster image",
-                    "type": "Image",
-                    "src": "image"
-                  }
-                ]
-              }
-      ]
-      },
-      {
-        "question":"Detected 6 names from recent website activity. Choose the suspect. ____________",
-        "last":false,
-        "elimination":true,
-        "attempts":3,
-        "events":[
-          {
-          "type": "news",
-          "posts": [
-            {
-              "title": "Monkey found on Mars!",
-              "description": "The space shuttle that took the EC-5743i Crawler to Mars had sent an absurd image of a monkey on Mars. Ashish S, Head of the Crawler and team were thunderstruck by this find. “It’s a space monkey!” he reported. “The former rockets had released some humans who were tragically eaten by the aliens and now a monkey or an alien in guise… I feel that Mars is a dangerous place”."
-            }
-          ]
-        }
+            "name": "Professor",
+            "content": "Creo que el tesorero está disfrutando más."
+          }
         ]
-      }, 
+      },
+      {
+        "type": "news",
+        "posts": [
+          {
+            "title": "Success of sinB",
+            "description": "The Story of sinB (Society of Intellectuals and Noble Benefits), the biggest investing company worth more than 300 billion dollars, reveals the story from rags to riches. CEO Mr. Shreesh K along with colleague and close friend Treasurer Mr. Varun B started the company in an underground cellar which now has more than 2000 offices all around the globe.  "
+          },
+          {
+            "title": "Brute OS, the new generation life-saver:",
+            "description": "Brute OS, the new generation operating system that offers best performance and security is now being used in all computers. Kinar S, the genius behind this, assured the world of its anti-hacking features, platform cross abilities and futuristic AI applications while flipping off a portrait of Bill Gates and Steve Jobs who rejected his job application and ideas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": " Our system being powered by the Brute OS can virtually attempt and achieve the impossible. Privacy is now a myth. Did you say Mr. Varun B and root? I have successfully intercepted his message log and this matches your search results. x^2 = 151.249043772225 y^2 = 5881.7211500644 Waiting for input results in decimals. ___________ ____________",
+    "last": true,
+    "elimination": false,
+    "events": [
+      {
+        "type": "news",
+        "posts": [
+          {
+            "title": "My 5 mantras of his success: Treasurer of sinB reveals",
+            "description": "Varun B, the treasurer of sinB reveals his 5 tips for success - * Perfect knowledge of numbers.*Absolute trust among the colleagues. * Eight hours of sleep.* Zero alcohol, no party during  the weekdays.* Enjoy the success of your efforts"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Professor",
+            "content": "Ah! Varun B, What route do we take now?"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Location for x,y? ____________(12)",
+    "last": false,
+    "elimination": false,
+    "events": [
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Professor",
+            "content": "These look like some coordinates. If only we had a map."
+          }
+        ]
+      },
 
       {
-        "question": "Did you say CHAI? I am not allowed to drink CHAI or COFFEE,  Here are some interesting CHAI facts from the web : 1) Chai - persons simply cannot function without their morning cup of tea! 2) They will order a cup of tea even in a coffee shop. 3) Chai is also a fuel for many creative thinkers. 4) The Chairperson of a leading coffee brand, Tejas Enterprises is also a Chai Person! Did you find it useful? 1) Yes 2) No",
-        "last":true,
-        "events": [
-            {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": "Shreesh",
-                        "content": "What? How dare you insult my friend?!"
-                      }
-                  ]
-              },
-              {
-                "name":"Shreesh",
-                "content":"But… I think it could make sense! I remember signing a deal with Pradyoth and Varun. I think I must go to Pradyoth’s office right now!"
-              },
+        "type": "news",
+        "posts": [
           {
-            "type": "message",
-            "messages": [
-                {
-                    "name": "Shreesh",
-                    "content": "WTH! I CAN’T BELIEVE THIS! I am sending you the picture!"
-                  }
-              ]
-          },
-          {
-            "type": "gallery",
-            "items": [
-              {
-                "name": "V&P Tied up image",
-                "type": "Image",
-                "src": "image"
-              }
-            ]
-          },
-          {
-            "type": "message",
-            "messages": [
-                {
-                    "name": "Shreesh",
-                    "content": "Did you see their condition? Both were drugged and masked! I managed to get them to talk, all they say is He was wearing a dali mask, a black hoodie and there was 'CHAI' on his back!"
-                  }
-              ]
+            "title": "Will Shih Tzu become the National Dog of India?",
+            "description": "The short fluffy hairy dog has captured the hearts of all, specially of two hardworking CS engineers Miss Vaishnavi R. and Miss Bhumika S. Their tweet about the Shih Tzu has stirred a great deal of activity on Twitter."
           }
-      ]
+        ]
+      }
+    ]
+  },
+  {
+    "question": " One does not realise that we have our eyes on everybody. I have managed to access the sinB CCTV hard drive, However the recordings folder denies entry.  Here’s the hint for the 4 digit security pin code: HEX BAD",
+    "last": true,
+    "elimination": false,
+    "events": [
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Professor",
+            "content": "Great! I’ll send my men there"
+          }
+        ]
       },
       {
-        "question": "Detecting system breach from unknown-user.Activating resistance mechanism. System Protected.  Detecting system breach from unknown-user. Activating resistance mechanism. System Protected.   Detecting system breach from unknown-user. Activating resistance mechanism. System Protected. This seems to be our last chance to prove our innocence. We got one chance before the CBI gained access to our data files and location. WHO IS THE PROFESSOR?",
-        "last":false,
-        "attempts":1,
-        "type":"MCQ",
-        "options":["Jitendra Bhat" ,"Madhusudan Joshi", "Nipunya D" ,"Shreenidhi Kulkarni","Shreesh Kulkarni"],
-        "elimination": true,
-        "events": [
-            {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": "Nipunya D - CASS Chairperson",
-                        "content": "He insulted the Society and now he’s trying to blame us for his criminal work? How dare you!!"
-                      }
-                  ]
-              },
-            {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": "Nipunya D - CASS Chairperson",
-                        "content": "He insulted the Society and now he’s trying to blame us for his criminal work? How dare you!!"
-                      }
-                  ]
-              },
-            {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": "Shreenidhi - WiE Chairperson",
-                        "content": "We’ve dedicated our entire career to build our friend’s dream and our dreams were also fulfilled. How could you now cause a nightmare to all of us?"
-                      }
-                  ]
-              },
-            {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": "Madhusudan Joshi - Chairperson",
-                        "content": "Chance after chance, we were there with you, nurtured you. Stabbing one in the back is rotten and now false blaming us? There’s a limit to our patience with you.."
-                      }
-                  ]
-              },
-            {
-                "type": "message",
-                "messages": [
-                    {
-                        "name": " Jitendra Bhat- Vice Chairperson",
-                        "content": "I completely agree.. I can’t tolerate this rogue anymore… I am going to lodge a complaint to the Authorities and have this scumbag behind bars!!"
-                      }
-                  ]
-              }
-      ]
+        "type": "news",
+        "posts": [
+          {
+            "title": "Breaking! Varun B Missing",
+            "description": "Treasurer of sinB, Varun B has been reported missing. According to the complaint lodged by his Partner and close Friend Mr. Shreesh K., Varun has missed the day’s important meetings and has not answered to any of his calls. sinB team is worried about his sudden disappearance."
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Professor",
+            "content": "We have managed to capture Varun. He refuses to reveal any information.To make him cooperate we need solid evidence against him"
+          }
+        ]
+      },
+      {
+        "type": "news",
+        "posts": [
+          {
+            "title": "Education Minister’s reality check:",
+            "description": "Education a barrier for stopping children from finding their real dreams and unleashing their potential states Education Minister of India Miss. Arpitha P. Grades can never tell a person how talented an individual really is, she claimed. Her statements received major praise throughout the world."
+          }
+        ]
       }
-  ]
+    ]
+  },
+  {
+    "question": "Searching for “IMPOSTERAMONGUS” Match found in folder : sinB account Details : Account number hint : The number of ways of arranging the word without repeating the letters ______(12)",
+    "last": true,
+    "elimination": false,
+    "events": [
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "name": "CCTV Video",
+            "type": "video",
+            "src": "cctv"
+          }
+        ]
+      },
+      {
+        "type": "news",
+        "posts": [
+          {
+            "title": "Bijoy diagnostics mobilises around 8 billion USD from Pedality",
+            "description": "Pedality Investments, one of the leading finance organizations headed by the young business tycoon  Mr.Pradyoth P has recently signed a deal with Bijoy diagnostics and has reportedly managed to have a turnover of over 7.98 billion USD. The chairperson of the management board Mr.Madhusudan J has confirmed good relations with foreign investors."
+          },
+          {
+            "title": "Insane writer sent to asylum:",
+            "description": "Crazy writer Adeep K.K. has been sent to an asylum after claiming the Geeta to be satanic. His review essay received massive negative responses and the reason behind his “outburst” was perhaps his recent firing from Adobe. Adeep claims to start a music band after he gets out of the nuthouse"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Professor",
+            "content": " The video has rattled him. After my men have threatened him for a great deal of time all he is saying is “Imposter among us”."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "According to crackstation.net this hashcode is hashed in MD5 algorithm. For more details visit the website. Enter the Password ________",
+    "last": true,
+    "elimination": false,
+    "events": [
+      {
+        "type": "news",
+        "posts": [
+          {
+            "title": "Actress’s actions warmed our hearts!",
+            "description": "Five major blockbusters haven't pumped the ego of actress Khushi S. who selflessly gave her Starbucks Coffee  and Meal to a hungry couple in the countryside where the actress was taking a break after her shooting."
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Professor",
+            "content": "Great Job! My hackers have extracted the hashed password of this bank account from the sinB database. The hashcode is: 565b410b44e179a14d3b82f7821508db "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Seems like the tables have turned now! It's hard to answer the question 'What is wrong?' when nothing is right! Did you say Mr. Varun B and Mr. Shreesh K though?  Scanning through last message, Shreesh : Varun, let’s meet at x and y x+y=88.924694  y-x=64.35578      X = ?  Y = ? Where do you think they meet? ______(5)",
+    "afterevent": true,
+    "elimination": false,
+    "events": [
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Professor",
+            "content": "You are a very valuable member of my team now! Thanks for your help. You’ll get what you deserve!"
+          }
+        ]
+      },
+
+      {
+        "type": "news",
+        "posts": [
+          {
+            "title": "Big Breaking! sinB reduced to dust:",
+            "description": "Society of intellectuals and noble benefits - sinB which had seen enormous growth in the past few months has been reportedly looted and the organization is now bankrupt. Allegedly a team of investors and members headed by a mastermind behind a dali mask have devastated the sinB treasury. Details are unknown."
+          },
+          {
+            "title": "MTech student scores!",
+            "description": "MTech student of IITB Bharath J. has been awarded a full scholarship to pursue a PhD at the prestigious Stanford University. He celebrated by building free websites for needy companies."
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Jitendra ",
+            "content": "How dare you?!"
+          },
+          {
+            "name": "Madhusudan",
+            "content": "How can you betray us?!"
+          },
+          {
+            "name": "Arpitha ",
+            "content": "OMG! Is this why we gave you the membership?"
+          },
+          {
+            "name": "Ashish",
+            "content": "We helped you so much! Is this how you repay us?!"
+          },
+          {
+            "name": "Jagruth",
+            "content": "I thought you were my friend!"
+          },
+          {
+            "name": "Shreenidhi K",
+            "content": "Ever since Varun was reported missing, all of us are upset and especially Shreesh!"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Did you say Shreesh and phone?  Checking recent activity.. Image found in gallery. Extracting data from gallery: Poster suggesting link. Sorry, the AI is not human. Type YES once you manage to open the website. ___ ",
+    "last": true,
+    "events": [
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Shreesh",
+            "content": "Why are you bothering me now? I am the CS guy and I will get to know if you track my location. I am busy now! Don't you dare track my phone again!"
+          }
+        ]
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "name": "Poster image",
+            "type": "Image",
+            "src": "poster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Detected 6 names from recent website activity. Choose the suspect. ____________",
+    "last": false,
+    "elimination": true,
+    "attempts": 3,
+    "events": [
+      {
+        "type": "news",
+        "posts": [
+          {
+            "title": "Monkey found on Mars!",
+            "description": "The space shuttle that took the EC-5743i Crawler to Mars had sent an absurd image of a monkey on Mars. Ashish S, Head of the Crawler and team were thunderstruck by this find. “It’s a space monkey!” he reported. “The former rockets had released some humans who were tragically eaten by the aliens and now a monkey or an alien in guise… I feel that Mars is a dangerous place”."
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "question": "Did you say CHAI? I am not allowed to drink CHAI or COFFEE,  Here are some interesting CHAI facts from the web : 1) Chai - persons simply cannot function without their morning cup of tea! 2) They will order a cup of tea even in a coffee shop. 3) Chai is also a fuel for many creative thinkers. 4) The Chairperson of a leading coffee brand, Tejas Enterprises is also a Chai Person! Did you find it useful? 1) Yes 2) No",
+    "last": true,
+    "events": [
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Shreesh",
+            "content": "What? How dare you insult my friend?!"
+          }
+        ]
+      },
+      {
+        "name": "Shreesh",
+        "content": "But… I think it could make sense! I remember signing a deal with Pradyoth and Varun. I think I must go to Pradyoth’s office right now!"
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Shreesh",
+            "content": "WTH! I CAN’T BELIEVE THIS! I am sending you the picture!"
+          }
+        ]
+      },
+      {
+        "type": "gallery",
+        "items": [
+          {
+            "name": "V&P Tied up image",
+            "type": "Image",
+            "src": "vp_tied"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Shreesh",
+            "content": "Did you see their condition? Both were drugged and masked! I managed to get them to talk, all they say is He was wearing a dali mask, a black hoodie and there was 'CHAI' on his back!"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Detecting system breach from unknown-user.Activating resistance mechanism. System Protected.  Detecting system breach from unknown-user. Activating resistance mechanism. System Protected.   Detecting system breach from unknown-user. Activating resistance mechanism. System Protected. This seems to be our last chance to prove our innocence. We got one chance before the CBI gained access to our data files and location. WHO IS THE PROFESSOR?",
+    "last": false,
+    "attempts": 1,
+    "type": "MCQ",
+    "options": [
+      "Jitendra Bhat",
+      "Madhusudan Joshi",
+      "Nipunya D",
+      "Shreenidhi Kulkarni",
+      "Shreesh Kulkarni"
+    ],
+    "elimination": true,
+    "events": [
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Nipunya D - CASS Chairperson",
+            "content": "He insulted the Society and now he’s trying to blame us for his criminal work? How dare you!!"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Nipunya D - CASS Chairperson",
+            "content": "He insulted the Society and now he’s trying to blame us for his criminal work? How dare you!!"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Shreenidhi - WiE Chairperson",
+            "content": "We’ve dedicated our entire career to build our friend’s dream and our dreams were also fulfilled. How could you now cause a nightmare to all of us?"
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": "Madhusudan Joshi - Chairperson",
+            "content": "Chance after chance, we were there with you, nurtured you. Stabbing one in the back is rotten and now false blaming us? There’s a limit to our patience with you.."
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "messages": [
+          {
+            "name": " Jitendra Bhat- Vice Chairperson",
+            "content": "I completely agree.. I can’t tolerate this rogue anymore… I am going to lodge a complaint to the Authorities and have this scumbag behind bars!!"
+          }
+        ]
+      }
+    ]
+  }
+]
+
