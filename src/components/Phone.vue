@@ -10,8 +10,9 @@
       <div id="app-screen" class="app-screen pt-0 px-4">
         <div id="home-screen" class="flex flex-wrap" v-if="route === 'home'">
           <div @click="redirect(app.name)" class="app cursor-pointer flex flex-col items-center justify-center mt-8 w-1/2" v-for="app in apps" :key="app.name">
-            <div class="app-icon flex items-center justify-center py-2 px-2 rounded-lg mb-1 bg-primary-red">
+            <div class="app-icon flex items-center justify-center py-2 px-2 rounded-lg mb-1 bg-primary-red relative">
               <box-icon color="white" :name="app.icon"></box-icon>
+              <div v-if="questions[progress].events && questions[progress].events[currentEvent] && questions[progress].events[currentEvent].type === app.type" class="notification-dot w-4 h-4 rounded-full bg-blue-600 mr-2 absolute -top-2 -right-4"></div>
             </div>
             <span class="app-name text-white">
               {{app.name}}
@@ -44,15 +45,18 @@ export default {
       apps: [
         {
           name: 'messages',
-          icon: 'chat'
+          icon: 'chat',
+          type: 'message'
         },
         {
           name: 'gallery',
-          icon: 'image'
+          icon: 'image',
+          type: 'gallery'
         },
         {
           name: 'news',
-          icon: 'news'
+          icon: 'news',
+          type: 'news'
         }
       ]
 
@@ -65,7 +69,10 @@ export default {
   },
   computed: {
     ...mapGetters({
-      route: 'GET_ROUTE'
+      route: 'GET_ROUTE',
+      questions: 'GET_QUESTIONS',
+      progress: 'GET_PROGRESS',
+      currentEvent: 'GET_CURRENT_EVENT'
     })
   }
 }

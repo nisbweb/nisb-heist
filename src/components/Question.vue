@@ -33,19 +33,19 @@ export default {
   },
   mounted () {
     // load question logic
-    for (let i = 0; i <= this.progress; i++) {
-      if (i === this.progress) {
-        if (this.questions[this.progress].events) {
-          this.$store.dispatch('LOAD_EVENT', { event: this.questions[this.progress].events[0], options: { silent: false, setCurrentEvent: true, currentEvent: 0 } })
-        }
-      } else {
-        if (this.questions[i].events) {
-          for (let j = 0; j < this.questions[i].events.length; j++) {
-            this.$store.dispatch('LOAD_EVENT', { event: this.questions[i].events[j], options: { silent: true } })
-          }
-        }
-      }
-    }
+    // for (let i = 0; i <= this.progress; i++) {
+    //   if (i === this.progress) {
+    //     if (this.questions[this.progress].events) {
+    //       this.$store.dispatch('LOAD_EVENT', { event: this.questions[this.progress].events[0], options: { silent: false, setCurrentEvent: true, currentEvent: 0 } })
+    //     }
+    //   } else {
+    //     if (this.questions[i].events) {
+    //       for (let j = 0; j < this.questions[i].events.length; j++) {
+    //         this.$store.dispatch('LOAD_EVENT', { event: this.questions[i].events[j], options: { silent: true } })
+    //       }
+    //     }
+    //   }
+    // }
   },
   methods: {
     selectOption (option) {
@@ -58,7 +58,7 @@ export default {
       if (this.questions[this.progress].elimination === true) {
         this.$toast(this.questions[this.progress].message)
       }
-      fetch('https://us-central1-la-casa-de-tesoro.cloudfunctions.net/submit', {
+      fetch('https://nisbheist.ml:5000/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

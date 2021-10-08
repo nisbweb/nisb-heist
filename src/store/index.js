@@ -48,6 +48,33 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    LOAD_QUESTIONS: ({ commit, dispatch, state }) => {
+      setTimeout(() => {
+        for (let i = 0; i <= state.progress; i++) {
+          if (i === state.progress) {
+            if (state.questions[state.progress].events) {
+              dispatch('LOAD_EVENT', {
+                event: state.questions[state.progress].events[0],
+                options: {
+                  silent: false,
+                  setCurrentEvent: true,
+                  currentEvent: 0
+                }
+              })
+            }
+          } else {
+            if (state.questions[i].events) {
+              for (let j = 0; j < state.questions[i].events.length; j++) {
+                dispatch('LOAD_EVENT', {
+                  event: state.questions[i].events[j],
+                  options: { silent: true }
+                })
+              }
+            }
+          }
+        }
+      }, 2000)
+    },
     NEXT_QUESTION: ({ commit, dispatch, state }) => {
       if (state.progress + 1 < state.questions.length) {
         commit('INCREMENT_PROGRESS')

@@ -46,6 +46,13 @@ const router = new VueRouter({
   routes
 })
 
+store.subscribe((mutation, state) => {
+  if (mutation.type === 'SET_LOADING' && mutation.payload === false) {
+    console.log(mutation)
+    store.dispatch('LOAD_QUESTIONS')
+  }
+})
+
 var getCurrentUser = () => {
   return new Promise((resolve, reject) => {
     const auth = getAuth()

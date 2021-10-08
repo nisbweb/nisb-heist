@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="personal-chat flex flex-col items-start justify-between h-full" v-else>
-            <div class="header font-bold text-xl text-white mb-3 flex items-center justify-between w-full">
+            <div class="header font-bold text-xl text-white mb-3 flex items-center justify-between w-full py-2">
               <box-icon size="xs" name="left-arrow" color="white" class="mr-6 mb-2 cursor-pointer" @click="whoChat=null"></box-icon>
               <span>
                 {{whoChat}}
