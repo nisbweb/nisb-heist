@@ -14,7 +14,7 @@
       </div>
       <div v-else id="input-wrapper" class="flex items-center justify-between mt-20">
         <input type="text" placeholder="Enter your answer here" v-model="answer" class="appearance-none w-full px-6 py-2 rounded-xl bg-gray-100 font-gray-800 focus:outline-none mr-4">
-        <button @click="submitAnswer" :disabled="isDisabled" class="rounded-xl text-white px-6 py-2 transform hover:-translate-y-1 transition-all duration-200 ease-in-out" :class="{'bg-red-300': isDisabled, 'bg-red-700': !isDisabled}">Submit</button>
+        <button @click="submitAnswer" :disabled="isDisabled || answer == null" class="rounded-xl text-white px-6 py-2 transform hover:-translate-y-1 transition-all duration-200 ease-in-out" :class="{'bg-red-300': isDisabled, 'bg-red-700': !isDisabled}">Submit</button>
       </div>
     </div>
   </div>
@@ -58,7 +58,7 @@ export default {
       if (this.questions[this.progress].elimination === true) {
         this.$toast(this.questions[this.progress].message)
       }
-      fetch('http://localhost:5001/la-casa-de-tesoro/us-central1/submit', {
+      fetch('https://us-central1-la-casa-de-tesoro.cloudfunctions.net/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -96,7 +96,6 @@ export default {
       currentEvent: 'GET_CURRENT_EVENT'
     }),
     isDisabled () {
-      if (!this.answer) return true
       if (this.loading === true) return true
       if (questions[this.progress].events) {
         return this.currentEvent !== questions[this.progress].events.length
