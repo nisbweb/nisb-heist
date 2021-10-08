@@ -61,7 +61,6 @@ var getCurrentUser = () => {
 }
 
 router.beforeEach(async (to, from, next) => {
-  console.log(to.name, from.name)
   store.commit('SET_LOADING', true)
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   const user = await getCurrentUser()

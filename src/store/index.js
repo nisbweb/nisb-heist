@@ -42,14 +42,19 @@ export default new Vuex.Store({
     },
     INCREMENT_WRONG_ATTEMPT: state => {
       state.user.wrongAttempts += 1
+    },
+    RESET_WRONG_ATTEMPT: state => {
+      state.user.wrongAttempts = 0
     }
   },
   actions: {
     NEXT_QUESTION: ({ commit, dispatch, state }) => {
       if (state.progress + 1 < state.questions.length) {
         commit('INCREMENT_PROGRESS')
+        commit('RESET_WRONG_ATTEMPT')
         updateDoc(doc(db, 'users', state.user.id), {
-          progress: state.progress
+          progress: state.progress,
+          wrongAttempts: 0
         })
           .then(data => {})
           .catch(err => {
@@ -70,8 +75,7 @@ export default new Vuex.Store({
           completedTime: new Date()
         })
           .then(data => {
-            // this.$router.push({ name: '' })
-            console.log(data)
+            router.push({ name: 'Result' })
           })
           .catch(err => {
             console.error(err)
@@ -109,14 +113,17 @@ export default new Vuex.Store({
           eliminated: true
         })
           .then(data => {
-            Vue.$toast.error('Shreesh bloked you!')
+            Vue.$toast.error(state.questions[state.progress].endMessage)
             router.push({ name: 'Result' })
           })
           .catch(err => {
             console.error(err)
           })
       } else {
-        Vue.$toast.error(`${3 - state.user.wrongAttempts} attempts left!`)
+        Vue.$toast.error(
+          `${state.questions[state.progress].attempts -
+            state.user.wrongAttempts} attempts left!`
+        )
       }
     }
   },

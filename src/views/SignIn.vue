@@ -55,6 +55,7 @@ export default {
                   completed: false,
                   completedTime: null
                 }).then(data => {
+                  this.$router.push({ name: 'Home' })
                 }).catch(err => {
                   console.error(err)
                 })

@@ -10,11 +10,11 @@
           <span class="w-10"></span>
         </div>
         <div class="gallery-wrapper flex mt-4 flex-wrap">
-          <div v-for="(element, index) in gallery" :key="index" class="w-1/2 px-2 overflow-hidden rounded-xl">
+          <div v-for="(element, index) in gallery" :key="index" class="w-1/2 px-2 overflow-hidden rounded-xl my-2">
             <div v-if="element.type === 'image'" class="image w-1/2 h-32 flex items-center justify-centera w-full cursor-pointer my-4" @click="openPopup(element.result, element.type)">
               <img :src="element.result" alt="" class="h-full w-full object-center object-cover">
             </div>
-            <div v-if="element.type === 'video'" class="video w-1/2 h-32 bg-white flex items-center justify-centera rounded-xl w-full cursor-pointer" @click="openPopup(element.result, element.type)">
+            <div v-if="element.type === 'video'" class="video w-1/2 h-32 bg-gray-700 flex items-center justify-centera rounded-xl w-full cursor-pointer" @click="openPopup(element.result, element.type)">
               <video class="w-full object-center object-cover">
                 <source :src="element.result" type="video/mp4">
               </video>

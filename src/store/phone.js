@@ -125,14 +125,17 @@ export default {
     GET_GALLERY: state => {
       return state.gallery.map(x => {
         switch (x.src) {
-          case 'something':
-            x.result = require('../assets/logo.png')
+          case 'vp_tied':
+            x.result = require('../assets/gallery/4 v&p tied.png')
             break
-          case 'somethingelse':
-            x.result = require('../assets/gallery/Screenshot.png')
+          case 'poster':
+            x.result = require('../assets/gallery/3 Poster from shreesh.mp4')
             break
-          case 'video':
-            x.result = require('../assets/gallery/Video.mp4')
+          case 'cctv':
+            x.result = require('../assets/gallery/2 cctv vid.mp4')
+            break
+          case 'prof':
+            x.result = require('../assets/gallery/1 prof.mp4')
             break
         }
         return x
