@@ -145,7 +145,9 @@ export default new Vuex.Store({
         .catch(err => {
           console.error(err)
         })
-      if (state.user.wrongAttempts >= 3) {
+      if (
+        state.user.wrongAttempts >= state.questions[state.progress].attempts
+      ) {
         // eliminate user
         updateDoc(doc(db, 'users', state.user.id), {
           eliminated: true

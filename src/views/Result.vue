@@ -44,7 +44,7 @@ export default {
   methods: {
   },
   mounted () {
-    const q = query(collection(db, 'users'), where('completed', '==', true), orderBy('completedTime'))
+    const q = query(collection(db, 'users'), where('completed', '==', true), orderBy('completedTime', 'desc'))
     onSnapshot(q, (querySnapshot) => {
       this.users = []
       querySnapshot.forEach((doc) => {
