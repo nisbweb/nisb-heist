@@ -265,8 +265,8 @@
         "type": "gallery",
         "items": [
           {
-            "name": "Poster image",
-            "type": "Image",
+            "name": "Poster video",
+            "type": "video",
             "src": "poster"
           }
         ]
@@ -277,6 +277,7 @@
     "question": "Detected 6 names from recent website activity. Choose the suspect. ____________",
     "last": false,
     "elimination": true,
+    "endMessage": "Shreesh has blocked you!",
     "attempts": 3,
     "events": [
       {
@@ -301,16 +302,11 @@
           {
             "name": "Shreesh",
             "content": "What? How dare you insult my friend?!"
-          }
-        ]
-      },
-      {
-        "name": "Shreesh",
-        "content": "But… I think it could make sense! I remember signing a deal with Pradyoth and Varun. I think I must go to Pradyoth’s office right now!"
-      },
-      {
-        "type": "message",
-        "messages": [
+          },
+          {
+            "name": "Shreesh",
+            "content": "But… I think it could make sense! I remember signing a deal with Pradyoth and Varun. I think I must go to Pradyoth’s office right now!"
+          },
           {
             "name": "Shreesh",
             "content": "WTH! I CAN’T BELIEVE THIS! I am sending you the picture!"
@@ -339,8 +335,7 @@
     ]
   },
   {
-    "question": "Detecting system breach from unknown-user.Activating resistance mechanism. System Protected.  Detecting system breach from unknown-user. Activating resistance mechanism. System Protected.   Detecting system breach from unknown-user. Activating resistance mechanism. System Protected. This seems to be our last chance to prove our innocence. We got one chance before the CBI gained access to our data files and location. WHO IS THE PROFESSOR?",
-    "last": false,
+    "question": "Detecting system breach from unknown-user.\nActivating resistance mechanism.\n System Protected.\n  Detecting system breach from unknown-user.\n Activating resistance mechanism.\n System Protected.\n   Detecting system breach from unknown-user.\n Activating resistance mechanism.\n System Protected.\n This seems to be our last chance to prove our innocence.\n We got one chance before the CBI gained access to our data files and location.\n WHO IS THE PROFESSOR?",
     "attempts": 1,
     "type": "MCQ",
     "options": [
@@ -351,6 +346,7 @@
       "Shreesh Kulkarni"
     ],
     "elimination": true,
+    "endMessage": "Busted!",
     "events": [
       {
         "type": "message",
@@ -358,39 +354,19 @@
           {
             "name": "Nipunya D - CASS Chairperson",
             "content": "He insulted the Society and now he’s trying to blame us for his criminal work? How dare you!!"
-          }
-        ]
-      },
-      {
-        "type": "message",
-        "messages": [
+          },
           {
             "name": "Nipunya D - CASS Chairperson",
             "content": "He insulted the Society and now he’s trying to blame us for his criminal work? How dare you!!"
-          }
-        ]
-      },
-      {
-        "type": "message",
-        "messages": [
+          },
           {
             "name": "Shreenidhi - WiE Chairperson",
             "content": "We’ve dedicated our entire career to build our friend’s dream and our dreams were also fulfilled. How could you now cause a nightmare to all of us?"
-          }
-        ]
-      },
-      {
-        "type": "message",
-        "messages": [
+          },
           {
             "name": "Madhusudan Joshi - Chairperson",
             "content": "Chance after chance, we were there with you, nurtured you. Stabbing one in the back is rotten and now false blaming us? There’s a limit to our patience with you.."
-          }
-        ]
-      },
-      {
-        "type": "message",
-        "messages": [
+          },
           {
             "name": " Jitendra Bhat- Vice Chairperson",
             "content": "I completely agree.. I can’t tolerate this rogue anymore… I am going to lodge a complaint to the Authorities and have this scumbag behind bars!!"

@@ -55,7 +55,8 @@ export default {
                 email: user.email,
                 progress: 0,
                 completed: false,
-                completedTime: null
+                completedTime: null,
+                wrongAttempts: 0
               }).then(data => {
                 this.$router.push({ name: 'Home' })
               }).catch(err => {

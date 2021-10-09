@@ -2,6 +2,7 @@ import Vue from 'vue'
 import MessagesIcon from '../components/Icon/MessagesIcon.vue'
 import NewsIcon from '../components/Icon/NewsIcon.vue'
 import GalleryIcon from '../components/Icon/GalleryIcon.vue'
+import store from './index'
 export default {
   state: {
     route: 'home',
@@ -82,7 +83,11 @@ export default {
         if (options.setCurrentEvent) {
           commit('SET_CURRENT_EVENT', options.currentEvent)
         }
-        if (!options.silent) {
+        if (
+          !options.silent &&
+          store.state.user.completed !== true &&
+          store.state.user.eliminated !== true
+        ) {
           Vue.$toast(
             `${event.messages[i].name}: ${event.messages[i].content}`,
             {
@@ -98,7 +103,11 @@ export default {
         if (options.setCurrentEvent) {
           commit('SET_CURRENT_EVENT', options.currentEvent)
         }
-        if (!options.silent) {
+        if (
+          !options.silent &&
+          store.state.user.completed !== true &&
+          store.state.user.eliminated !== true
+        ) {
           Vue.$toast(`News: ${event.posts[i].title}`, {
             icon: NewsIcon
           })
@@ -111,7 +120,11 @@ export default {
         if (options.setCurrentEvent) {
           commit('SET_CURRENT_EVENT', options.currentEvent)
         }
-        if (!options.silent) {
+        if (
+          !options.silent &&
+          store.state.user.completed !== true &&
+          store.state.user.eliminated !== true
+        ) {
           Vue.$toast(`Gallery: there is a new ${event.items[i].type}`, {
             icon: GalleryIcon
           })

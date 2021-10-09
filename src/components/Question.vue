@@ -1,7 +1,8 @@
 <template>
+    <transition name="conjure">
   <div id="Question px-10" v-if="!(questions[progress].last && isDisabled)">
     <div>
-      <h2 class="text-2xl font-bold text-center mt-32">
+      <h2 class="text-2xl font-bold text-left mt-32">
         <span
            v-for="(line,lineNumber) of questions[progress].question.split('\n')"
            v-bind:key="lineNumber" >
@@ -9,15 +10,16 @@
         </span>
       </h2>
       <div v-if="questions[progress].type === 'MCQ'" id="MCQ-wrapper" class="flex flex-col items-center justify-between mt-20">
-        <div @click="selectOption(option)" v-for="(option, index) in questions[progress].options" :key="index"  class="text-center my-2 w-full rounded-xl text-gray-800 px-6 py-2 transition-all duration-200 ease-in-out border hover:bg-blue-100 bg-opacity-10" :class="{'bg-blue-800': answer === option}">{{option}}</div>
-        <button @click="submitAnswer" :disabled="isDisabled" class="w-full rounded-xl text-white px-6 py-2 transform hover:-translate-y-1 transition-all duration-200 ease-in-out my-2" :class="{'bg-red-300': isDisabled, 'bg-red-700': !isDisabled}">Submit</button>
+        <div @click="selectOption(option)" v-for="(option, index) in questions[progress].options" :key="index"  class="text-center my-2 w-full rounded-xl text-gray-800 px-6 cursor-pointer py-2 transition-all duration-200 ease-in-out border hover:bg-blue-100 bg-opacity-10" :class="{'bg-blue-800': answer === option}">{{option}}</div>
+        <button @click="submitAnswer" :disabled="isDisabled" class="w-full rounded-xl text-white px-6 py-2 transform hover:-translate-y-1 transition-all duration-200 ease-in-out mt-2 mb-10" :class="{'bg-red-300': isDisabled, 'bg-red-700': !isDisabled}">Submit</button>
       </div>
-      <div v-else id="input-wrapper" class="flex items-center justify-between mt-20">
+      <div v-else id="input-wrapper" class="flex items-center justify-between mt-20 mb-10">
         <input type="text" placeholder="Enter your answer here" v-model="answer" class="appearance-none w-full px-6 py-2 rounded-xl bg-gray-100 font-gray-800 focus:outline-none mr-4">
         <button @click="submitAnswer" :disabled="isDisabled || answer == null" class="rounded-xl text-white px-6 py-2 transform hover:-translate-y-1 transition-all duration-200 ease-in-out" :class="{'bg-red-300': isDisabled, 'bg-red-700': !isDisabled}">Submit</button>
       </div>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -55,9 +57,9 @@ export default {
       this.loading = true
       // answer submission logic
 
-      if (this.questions[this.progress].elimination === true) {
-        this.$toast(this.questions[this.progress].message)
-      }
+      // if (this.questions[this.progress].elimination === true) {
+      //   this.$toast(this.questions[this.progress].message)
+      // }
       fetch('https://nisbheist.ml:5000/api/submit', {
         method: 'POST',
         headers: {
@@ -73,7 +75,11 @@ export default {
         if (data.success === true && data.submission === true) {
           this.$store.dispatch('NEXT_QUESTION')
         } else {
-          this.$toast.error('Incorrect answer')
+          if (this.questions[this.progress].elimination === true && this.questions[this.progress].attempts === 3) {
+            this.$toast.error('No reply')
+          } else {
+            this.$toast.error('Incorrect answer')
+          }
           if (this.questions[this.progress].elimination === true) {
             this.$store.dispatch('WRONG_ATTEMPT')
           }
@@ -98,6 +104,7 @@ export default {
     isDisabled () {
       if (this.loading === true) return true
       if (questions[this.progress].events) {
+        console.log(this.currentEvent, questions[this.progress].events.length)
         return this.currentEvent !== questions[this.progress].events.length
       }
       return false

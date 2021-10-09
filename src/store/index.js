@@ -45,10 +45,17 @@ export default new Vuex.Store({
     },
     RESET_WRONG_ATTEMPT: state => {
       state.user.wrongAttempts = 0
+    },
+    ELIMINATE_USER: state => {
+      state.user.eliminated = true
+    },
+    QUIZ_COMPLETE: state => {
+      state.user.completed = true
     }
   },
   actions: {
     LOAD_QUESTIONS: ({ commit, dispatch, state }) => {
+      console.log(router.currentRoute)
       if (router.currentRoute.name !== 'Home') {
         return
       }
@@ -106,6 +113,7 @@ export default new Vuex.Store({
         })
           .then(data => {
             router.push({ name: 'Result' })
+            commit('QUIZ_COMPLETE')
           })
           .catch(err => {
             console.error(err)
@@ -143,6 +151,7 @@ export default new Vuex.Store({
           eliminated: true
         })
           .then(data => {
+            commit('ELIMINATE_USER')
             Vue.$toast.error(state.questions[state.progress].endMessage)
             router.push({ name: 'Result' })
           })
@@ -150,6 +159,7 @@ export default new Vuex.Store({
             console.error(err)
           })
       } else {
+        console.log(state.questions[state.progress].attempts)
         Vue.$toast.error(
           `${state.questions[state.progress].attempts -
             state.user.wrongAttempts} attempts left!`

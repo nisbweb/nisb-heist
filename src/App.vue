@@ -105,6 +105,17 @@ export default {
     transform: translateY(35px);
     background: transparent;
 }
+.conjure-enter-active,
+.conjure-leave-active {
+    transition: all 1s ease-in-out;
+}
+
+.conjure-enter,
+.conjure-leave-to {
+    opacity: 0;
+    transform: translateY(35px);
+    background: transparent;
+}
  /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
