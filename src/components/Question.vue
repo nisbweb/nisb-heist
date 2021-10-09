@@ -58,7 +58,7 @@ export default {
       if (this.questions[this.progress].elimination === true) {
         this.$toast(this.questions[this.progress].message)
       }
-      fetch('https://nisbheist.ml:5000/', {
+      fetch('https://nisbheist.ml:5000/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
