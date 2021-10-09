@@ -3,7 +3,7 @@
     <div v-if="user.completed == true" class="wrapper flex justify-center flex-col items-center">
       <img src="@/assets/beer.svg" alt="" class="w-1/2 animate">
       <div class="content text-lg animate mt-3">
-        Congratulations <span class="font-bold">{{user.code}}</span>, on finding the culprit 🎉!
+        Investigation reports matched with CBI records. Congratulations <span class="font-bold">{{user.code}}</span>, on finding the culprit 🎉!
       </div>
     </div>
     <div v-else class="wrapper flex justify-center flex-col items-center">
