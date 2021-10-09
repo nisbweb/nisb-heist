@@ -76,7 +76,7 @@ export default {
           this.$store.dispatch('NEXT_QUESTION')
         } else {
           if (this.questions[this.progress].elimination === true && this.questions[this.progress].attempts === 3) {
-            this.$toast.error('No reply')
+            this.$toast.error('Sending information to shreesh, No reply')
           } else {
             this.$toast.error('Incorrect answer')
           }
