@@ -1,71 +1,53 @@
 <template>
-  <div id="Home" class="min-h-screen pt-20 2xl:pt-32">
-    <nav class="flex items-center justify-between fixed top-0 left-0 w-full py-2">
-      <Logo :animate="false" class="transform scale-50 -translate-x-16"/>
-    </nav>
-
-    <h2 class="text-center font-bold text-3xl mb-10">Leaderboard</h2>
-    <table id="result-table" class="border-collapse w-full">
-    <thead>
-        <tr>
-            <th class="border-b-2">Email</th>
-            <th class="border-b-2 py-2">Code</th>
-            <th class="border-b-2">Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr v-for="(user, index) in users" :key="index">
-          <td class="border-b text-center py-2">{{user.email}}</td>
-          <td class="border-b text-center py-2">{{user.code}}</td>
-          <td class="border-b text-center py-2">{{user.name}}</td>
-        </tr>
-    </tbody>
-</table>
-
+  <div id="Congratulations" class="min-h-screen flex items-center justify-center">
+    <div v-if="user.completed == true" class="wrapper flex justify-center flex-col items-center">
+      <img src="@/assets/beer.svg" alt="" class="w-1/2 animate">
+      <div class="content text-lg animate mt-3">
+        Investigation reports matched with CBI records. Congratulations <span class="font-bold">{{user.code}}</span>, on finding the culprit 🎉!
+      </div>
+    </div>
+    <div v-else class="wrapper flex justify-center flex-col items-center">
+      <img src="@/assets/busted-stamp.png" alt="" class="w-1/2 animate">
+      <div class="content text-lg animate mt-3">
+        The CBI is now looking for you, good luck with that!
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue'
 import { mapGetters } from 'vuex'
-import { collection, query, where, onSnapshot, orderBy } from 'firebase/firestore'
-import db from '../firebase.js'
-
 export default {
-  name: 'Home',
+  name: '',
+  title: 'End',
   components: {
-    Logo
   },
   data () {
     return {
-      users: []
+
     }
   },
-  methods: {
-  },
   mounted () {
-    const q = query(collection(db, 'users'), where('completed', '==', true), orderBy('completedTime', 'desc'))
-    onSnapshot(q, (querySnapshot) => {
-      this.users = []
-      querySnapshot.forEach((doc) => {
-        this.users.push(doc.data())
-      })
-    })
+    // setTimeout(() => {
+    //   this.$router.push({ name: 'Leaderboard' })
+    // }, 5000)
   },
   computed: {
     ...mapGetters({
+      user: 'GET_USER'
     })
   }
 }
 </script>
+
 <style lang="scss" scoped>
-#phone-screen {
-  border-radius: 2.2rem;
+@keyframes conjure {
+  from {opacity: 0;transform: translateY(10px);}
+  to {opacity: 1;transform: translateY(0px);}
 }
-.height-phone {
-  height: 666px !important;
+
+.animate {
+  animation: conjure 2s ease-in-out 0s 1 alternate;
 }
-.width-phone {
-  width: 330px !important;
-}
+
 </style>

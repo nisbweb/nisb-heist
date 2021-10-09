@@ -26,17 +26,17 @@ const routes = [
     }
   },
   {
-    path: '/result',
-    name: 'Congratulations',
-    component: () => import('../views/Congratulations.vue'),
+    path: '/Result',
+    name: 'Result',
+    component: () => import('../views/Result.vue'),
     meta: {
       requiresAuth: true
     }
   },
   {
     path: '/Leaderboard',
-    name: 'Result',
-    component: () => import('../views/Result.vue'),
+    name: 'Leaderboard',
+    component: () => import('../views/Leaderboard.vue'),
     meta: {
       requiresAuth: true
     }
@@ -102,9 +102,9 @@ router.beforeEach(async (to, from, next) => {
         if (to.name === 'Home') next()
         else next({ name: 'Home' })
       } else {
-        // if (from.name === 'Congratulations' && to.name === 'Result') next()
-        if (to.name === 'Congratulations') next()
-        else next('Congratulations')
+        // if (from.name === 'Result' && to.name === 'Result') next()
+        if (to.name === 'Result') next()
+        else next({ name: 'Result' })
       }
     }
   } else {
