@@ -26,7 +26,7 @@ const routes = [
     }
   },
   {
-    path: '/congratulations',
+    path: '/result',
     name: 'Congratulations',
     component: () => import('../views/Congratulations.vue'),
     meta: {
