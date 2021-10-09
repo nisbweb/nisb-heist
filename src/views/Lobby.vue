@@ -8,7 +8,7 @@
       <div class="content animate w-1/2 text-center mt-8">
         <span class="font-bold">DISCLAIMER: </span><br> The event is programmed analogous to an online game.
 The storyline of the game is completely fictional and does not hold any resemblance to reality.
-Any of the charecters appearing in the story hold no relevance to their circumstances in the game.
+Any of the characters appearing in the story hold no relevance to their circumstances in the game.
 Thank you.
       </div>
     </div>
