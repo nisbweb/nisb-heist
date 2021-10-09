@@ -102,9 +102,8 @@ router.beforeEach(async (to, from, next) => {
         if (to.name === 'Home') next()
         else next({ name: 'Home' })
       } else {
-        console.log(from.name === 'Congratulations', to.name === 'Result')
-        if (from.name === 'Congratulations' && to.name === 'Result') next()
-        else if (to.name === 'Congratulations') next()
+        // if (from.name === 'Congratulations' && to.name === 'Result') next()
+        if (to.name === 'Congratulations') next()
         else next('Congratulations')
       }
     }

@@ -19,7 +19,7 @@
 import { mapGetters } from 'vuex'
 export default {
   name: '',
-  title: 'Congratulations',
+  title: 'End',
   components: {
   },
   data () {
@@ -28,9 +28,9 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      this.$router.push({ name: 'Result' })
-    }, 5000)
+    // setTimeout(() => {
+    //   this.$router.push({ name: 'Result' })
+    // }, 5000)
   },
   computed: {
     ...mapGetters({
