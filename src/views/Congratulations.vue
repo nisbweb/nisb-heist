@@ -1,9 +1,15 @@
 <template>
   <div id="Congratulations" class="min-h-screen flex items-center justify-center">
-    <div class="wrapper flex justify-center flex-col items-center">
+    <div v-if="user.completed == true" class="wrapper flex justify-center flex-col items-center">
       <img src="@/assets/beer.svg" alt="" class="w-1/2 animate">
       <div class="content text-lg animate mt-3">
         Congratulations <span class="font-bold">{{user.code}}</span>, on finding the culprit 🎉!
+      </div>
+    </div>
+    <div v-else class="wrapper flex justify-center flex-col items-center">
+      <img src="@/assets/busted-stamp.png" alt="" class="w-1/2 animate">
+      <div class="content text-lg animate mt-3">
+        The CBI is now looking for you, good luck with that!
       </div>
     </div>
   </div>

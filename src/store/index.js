@@ -112,7 +112,7 @@ export default new Vuex.Store({
           completedTime: new Date()
         })
           .then(data => {
-            router.push({ name: 'Result' })
+            router.push({ name: 'Congratulations' })
             commit('QUIZ_COMPLETE')
           })
           .catch(err => {

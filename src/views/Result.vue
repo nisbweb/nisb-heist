@@ -4,6 +4,7 @@
       <Logo :animate="false" class="transform scale-50 -translate-x-16"/>
     </nav>
 
+    <h2 class="text-center font-bold text-3xl mb-10">Leaderboard</h2>
     <table id="result-table" class="border-collapse w-full">
     <thead>
         <tr>
