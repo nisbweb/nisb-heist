@@ -32,8 +32,8 @@
               </span>
               <span class="w-10"></span>
             </div>
-            <div class="messages pb-5 flex flex-col-reverse overflow-y-scroll hide-scrollbar w-full">
-              <div v-for="(content, index) in messages[whoChat]" :key="index" class="message w-max my-2 mr-6 bg-indigo-800 px-4 py-2 rounded-lg rounded-bl-none">
+            <div class="messages overflow-x-hidden pb-5 flex flex-col-reverse items-start overflow-y-scroll hide-scrollbar w-full">
+              <div v-for="(content, index) in messages[whoChat]" :key="index" class="message my-2 mr-6 bg-indigo-800 px-4 py-2 rounded-lg rounded-bl-none">
                 {{content.message}}
               </div>
             </div>
