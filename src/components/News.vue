@@ -13,7 +13,12 @@
           <div class="post bg-red-600 bg-opacity-40 rounded-lg py-3 px-4 my-4" v-for="(post, index) in posts" :key="index">
             <h4 class="title text-lg font-bold mb-1">{{post.title}}</h4>
             <p class="description text-normal leading-5">
-              {{post.description}}
+        <span
+           v-for="(line,lineNumber) of post.description.split('\n')"
+           v-bind:key="lineNumber" >
+          {{ line }}
+          <br/>
+        </span>
             </p>
           </div>
         </div>

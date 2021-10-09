@@ -1,8 +1,7 @@
 [
   {
     "question": "Hello! This is your personalized AI assistant.  Rule of life is the survival of the fittest and the elimination of the weakest. The weakest is usually well hidden but enjoys the best position in the circle. Who do you see enjoying the best role right now?",
-    "elimination": false,
-    "afterevent": false,
+    "last": false,
     "events": [
       {
         "type": "gallery",
@@ -41,14 +40,13 @@
   {
     "question": " Our system being powered by the Brute OS can virtually attempt and achieve the impossible. Privacy is now a myth. Did you say Mr. Varun B and root? I have successfully intercepted his message log and this matches your search results. x^2 = 151.249043772225 y^2 = 5881.7211500644 Waiting for input results in decimals. ___________,____________",
     "last": true,
-    "elimination": false,
     "events": [
       {
         "type": "news",
         "posts": [
           {
             "title": "My 5 mantras of his success: Treasurer of sinB reveals",
-            "description": "Varun B, the treasurer of sinB reveals his 5 tips for success - * Perfect knowledge of numbers.*Absolute trust among the colleagues. * Eight hours of sleep.* Zero alcohol, no party during  the weekdays.* Enjoy the success of your efforts"
+            "description": "Varun B, the treasurer of sinB reveals his 5 tips for success - \n* Perfect knowledge of numbers.\n*Absolute trust among the colleagues. \n* Eight hours of sleep.\n* Zero alcohol, no party during  the weekdays.\n* Enjoy the success of your efforts"
           }
         ]
       },
@@ -66,14 +64,13 @@
   {
     "question": "Location for x,y? ____________(12)",
     "last": false,
-    "elimination": false,
     "events": [
       {
         "type": "message",
         "messages": [
           {
             "name": "Professor",
-            "content": "These look like some coordinates. If only we had a map."
+            "content": "12.298335, 76.69238? These look like some coordinates. If only we had a map."
           }
         ]
       },
@@ -92,7 +89,6 @@
   {
     "question": " One does not realise that we have our eyes on everybody. I have managed to access the sinB CCTV hard drive, However the recordings folder denies entry.  Here’s the hint for the 4 digit security pin code: HEX BAD",
     "last": true,
-    "elimination": false,
     "events": [
       {
         "type": "message",
@@ -135,7 +131,6 @@
   {
     "question": "Searching for “IMPOSTERAMONGUS” Match found in folder : sinB account Details : Account number hint : The number of ways of arranging the word without repeating the letters ______(12)",
     "last": true,
-    "elimination": false,
     "events": [
       {
         "type": "gallery",
@@ -174,7 +169,6 @@
   {
     "question": "According to crackstation.net this hashcode is hashed in MD5 algorithm. For more details visit the website. Enter the Password ________",
     "last": true,
-    "elimination": false,
     "events": [
       {
         "type": "news",
@@ -199,7 +193,6 @@
   {
     "question": "Seems like the tables have turned now! It's hard to answer the question 'What is wrong?' when nothing is right! Did you say Mr. Varun B and Mr. Shreesh K though?  Scanning through last message, Shreesh : Varun, let’s meet at x and y x+y=88.924694  y-x=64.35578      X = ?  Y = ? Where do you think they meet? ______(5)",
     "last": true,
-    "elimination": false,
     "events": [
       {
         "type": "message",
