@@ -93,8 +93,8 @@ router.beforeEach(async (to, from, next) => {
 
       if (results[1].data().admin === true) next()
       else if (!results[0].data().started) {
-        if (to.name === 'Lobby') next()
-        else next('Lobby')
+        if (to.name === 'Home') next()
+        else next('/')
       } else if (
         results[1].data().completed !== true &&
         results[1].data().eliminated !== true
